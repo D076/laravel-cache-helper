@@ -23,7 +23,11 @@
         }
     },
     "extra": {
-        "laravel": {}
+        "laravel": {
+            "providers": [
+                "D076\\LaravelCacheHelper\\CacheHelperServiceProvider"
+            ]
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true
