@@ -13,8 +13,5 @@ class CacheHelperServiceProvider extends \Illuminate\Support\ServiceProvider
 
     public function boot(): void
     {
-        $this->publishes([
-            __DIR__.'/../config/cache.php' => config_path('cache.php'),
-        ]);
     }
 }
