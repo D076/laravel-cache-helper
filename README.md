@@ -37,7 +37,7 @@ class SomeClass
 ```
 
 ### Important
-Your class or parent classes/traits should not contain overrided __call and __callStatic methods. 
+Your class or parent classes/traits should not contain override __call and __callStatic methods. 
 So you can`t use HasCached trait in your Models.
 
 Now you can call your methods with Cached or ForceCached prefix. 
