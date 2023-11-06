@@ -12,3 +12,42 @@ Small helper for Laravel Cache facade
 ```bash
 composer require d076/laravel-cache-helper
 ```
+
+## Usage
+
+Add HasCached trait to your class which methods you want to cache.
+
+```php
+use D076\LaravelCacheHelper\Traits\HasCached;
+
+class SomeClass
+{
+    use HasCached;
+    
+    public function someMethod($params)
+    {
+        ...
+    }
+    
+    public static function someStaticMethod($params)
+    {
+        ...
+    }
+}
+```
+
+### Important
+Your class or parent classes/traits should not contain overrided __call and __callStatic methods. 
+So you can`t use HasCached trait in your Models.
+
+Now you can call your methods with Cached or ForceCached prefix. 
+
+Optionally, you can pass last parameter $ttl in seconds.
+
+```php
+$someClass->someMethodCached($params, $ttl);
+$someClass->someMethodForceCached($params, $ttl);
+
+SomeClass::someStaticMethodCached($params, $ttl);
+SomeClass::someStaticMethodForceCached($params, $ttl);
+```
